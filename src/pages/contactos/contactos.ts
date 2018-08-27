@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatoEmpleadoPage } from '../dato-empleado/dato-empleado';
+import { EmpleadosProvider } from '../../providers/empleados/empleados';
 
 
 /**
@@ -17,15 +18,24 @@ import { DatoEmpleadoPage } from '../dato-empleado/dato-empleado';
 })
 export class ContactosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  empleados
+  constructor(public navCtrl: NavController, public navParams: NavParams, public provider: EmpleadosProvider) {
   }
 
-  goToEmpleado(empleadoID){
-  	this.navCtrl.push(DatoEmpleadoPage, {empleadoID : empleadoID});
+
+
+  goToEmpleado(empleado){
+    //console.log(empleado);
+  	this.navCtrl.push(DatoEmpleadoPage, {empleado: empleado});
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ContactosPage');
+    this.provider.getEmpleados()
+    .subscribe(
+      (data)=>{this.empleados = data;},
+      (error)=>{console.log(error);}
+      )
+    //console.log('ionViewDidLoad ContactosPage');
   }
 
 }

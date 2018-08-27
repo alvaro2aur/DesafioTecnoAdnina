@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ContactosPage } from '../contactos/contactos';
+import { EmpleadosProvider } from '../../providers/empleados/empleados';
 
 
 /**
@@ -17,13 +18,12 @@ import { ContactosPage } from '../contactos/contactos';
 })
 export class DatoEmpleadoPage {
 
-	public empleadoID : number;
+	public empleado : any;
 
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  	this.empleadoID = this.navParams.get('empleadoID');
-  	console.log(this.empleadoID);
+  constructor(public navCtrl: NavController, public navParams: NavParams, public provider: EmpleadosProvider) {
+  	this.empleado = this.navParams.get('empleado');
+  	//console.log(this.navParams);
   }
 
   ionViewDidLoad() {

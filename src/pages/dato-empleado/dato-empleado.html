@@ -7,12 +7,49 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>DatoEmpleado</ion-title>
+    <ion-title>Datos del Empleado</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+	<ion-grid>
+		<ion-row>
+			<ion-col col-6>
+				Nombre
+				<h4>{{empleado.nombre}}</h4>
+			</ion-col>
+				<ion-col col-6>
+				Apellido
+				<h4>{{empleado.apellido}}</h4>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				RUN
+				<h4>{{empleado.run}}</h4>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				Genero
+				<h4>{{empleado.genero}}</h4>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				Fecha de ingreso
+				<h4>{{empleado.fecha}}</h4>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				Dirección
+				<h4>{{empleado.direccion}}</h4>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	
+	
 </ion-content>

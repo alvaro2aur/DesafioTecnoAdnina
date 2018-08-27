@@ -18,14 +18,19 @@
 
 <ion-content padding>
 	<ion-list inset>
-  		<button ion-item (click)="goToEmpleado(1)">
+    <button ion-item *ngFor="let empleado of empleados" (click)="goToEmpleado(empleado)">
+      {{ empleado.nombre }} {{ empleado.apellido }} 
+    </button>
+  		<!--
+      <button ion-item (click)="goToEmpleado(1)">
         <ion-icon item-left name="contact"></ion-icon>
     		Empleado 1
   		</button> 
   		<button ion-item (click)="goToEmpleado(2)">
         <ion-icon item-left name="contact"></ion-icon>
     		Empleado 2
-  		</button> 
+  		</button>
+      --> 
 	</ion-list>
 
 </ion-content>
